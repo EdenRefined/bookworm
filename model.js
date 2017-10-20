@@ -6,6 +6,8 @@ var bookwormApp = {
             age: 25,
             sex: "female",
             location: ["Maryland"],
+            favAuthor: "Dr. Seuss",
+            favBook: "The Cat in the Hat",
             track: true
         }
     },

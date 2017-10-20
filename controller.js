@@ -12,12 +12,14 @@ var controller = {
         var arr = bookwormApp.getAll();
         appView.displayProfile(arr);
     },
-    addProfile: function(name, age, sex, location) { 
+    addProfile: function(name, age, sex, location, favAuthor, favBook) { 
         var profile = {
             name: name,
             age: age,
             sex: sex,
             location: [],
+            favAuthor: favAuthor,
+            favBook: favBook,
             track: true
         }
         if (location !== undefined){
@@ -26,6 +28,14 @@ var controller = {
         console.log(profile);
         bookwormApp.addNew(profile);
         this.displayProfile();
+    },
+    updateProfile: function(id, [key]){
+        get.bookwormObj[id].push([key]);
+        appView.displayProfile();
+    },
+    deleteProfile: function(id){
+        get.bookwormObj[id].delete[id];
+        appView.displayProfile();
     },
     addLocation: function(bookwormObj, location){
 
